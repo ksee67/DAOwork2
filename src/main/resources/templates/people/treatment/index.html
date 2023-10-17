@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <a href="/people">Список пациентов</a> |
+  <a href="/treatments">Лечение</a> |
+  <a href="/invoices">Счета</a> |
+    <a href="/dentists">Стоматологи</a> |
+    <a href="/appointments">Записи на приём</a>
+    <title>Все пациенты</title>
+</head>
+<body>
+<h2 style="color: pink; font-family: Arial, sans-serif; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);">Все услуги:</h2>
+ <div th:each="treatment : ${treatments}">
+    <a th:href="@{/treatments/{id}(id=${treatment.getId()})}" th:text="${treatment.getName()}"></a>
+  </div>
+</body>
+</html>

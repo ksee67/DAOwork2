@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <a href="/people">Список пациентов</a> |
+  <a href="/treatments">Лечение</a> |
+  <a href="/invoices">Счета</a> |
+  <a href="/dentists">Стоматологи</a> |
+  <a href="/appointments">Записи на приём</a>
+  <title>Все записи на приём</title>
+</head>
+<body>
+<h2 style="color: pink; font-family: Arial, sans-serif; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);">Все записи на приём:</h2>
+<div th:each="appointment : ${appointments}">
+  <a th:href="@{/appointments/{id}(id=${appointment.getId()})}" th:text="${appointment.getAppointmentDate()}"></a>
+</div>
+</body>
+</html>
